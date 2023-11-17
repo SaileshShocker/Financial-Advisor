@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Advisor</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(120, 198, 201);
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: rgb(44, 43, 43);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Financial Advisor</h1>
+    <form method="post">
+        <label for="financial_concept">Enter a financial concept:</label>
+        <input type="text" id="financial_concept" name="financial_concept" required value="{{ request.form['financial_concept'] if request.form['financial_concept'] }}" >
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if result %}
+        <div id="result">
+            <h2>Result:</h2>
+            <p>{{ result }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
