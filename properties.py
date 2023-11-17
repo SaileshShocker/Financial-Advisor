@@ -1,1 +1,1 @@
-openai_key="Your API KEY"
+openai_key="Your api-key"
